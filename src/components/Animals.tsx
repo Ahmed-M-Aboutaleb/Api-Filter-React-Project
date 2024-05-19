@@ -2,7 +2,7 @@ import AnimalInterface from '../interfaces/AnimalInterface';
 import Animal from './Animal';
 import { AnimalsConsumer } from '../contexts/AnimalsContext';
 
-function Animals() {
+export default function Animals() {
     return (
         <AnimalsConsumer>
             {({ animals }) => (
@@ -24,5 +24,3 @@ function Animals() {
         </AnimalsConsumer>
     );
 }
-
-export default Animals;

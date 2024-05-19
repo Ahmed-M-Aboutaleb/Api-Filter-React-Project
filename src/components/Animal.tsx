@@ -1,6 +1,6 @@
 import AnimalInterface from '../interfaces/AnimalInterface';
 
-function Animal({ id, name, age, type }: AnimalInterface) {
+export default function Animal({ id, name, age, type }: AnimalInterface) {
     return (
         <li key={id}>
             <p>{name}</p>
@@ -9,5 +9,3 @@ function Animal({ id, name, age, type }: AnimalInterface) {
         </li>
     );
 }
-
-export default Animal;

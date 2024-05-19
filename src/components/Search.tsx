@@ -1,6 +1,6 @@
 import { AnimalsConsumer } from '../contexts/AnimalsContext';
 
-function Search() {
+export default function Search() {
     const searchAnimals = async (
         query: string,
         setAnimals: (data: []) => void
@@ -21,5 +21,3 @@ function Search() {
         </AnimalsConsumer>
     );
 }
-
-export default Search;

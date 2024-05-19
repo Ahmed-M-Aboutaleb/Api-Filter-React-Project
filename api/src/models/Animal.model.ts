@@ -3,29 +3,28 @@ import Chance from 'chance';
 
 const ANIMALS_NUMBER = 350;
 
-class AnimalModel {
+export default class AnimalModel {
     id: number;
     name: string;
     age: number;
     type: string;
     static chance: Chance.Chance = new Chance();
 
-    constructor(id:number, name: string, age: number, type: string) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.type = type;
+    constructor(animal: Animal) {
+        this.id = animal.id;
+        this.name = animal.name;
+        this.age = animal.age;
+        this.type = animal.type;
     }
 
     static fromJSON(json: Animal): AnimalModel {
-        return new AnimalModel(json.id, json.name, json.age, json.type);
+        return new AnimalModel(json);
     }
 
     static fetchAll(): AnimalModel[] {
         return [...Array(ANIMALS_NUMBER).keys()].map(id => {
-            return new AnimalModel(id, this.chance.animal(), this.chance.age(), this.chance.animal());
+            const animal = {id: id, name: this.chance.animal(), age: this.chance.age(), type: this.chance.animal()};
+            return new AnimalModel(animal);
         });
     }
 }
-
-export default AnimalModel;

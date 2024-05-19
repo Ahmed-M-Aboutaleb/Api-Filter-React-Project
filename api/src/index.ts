@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import AnimalController from './controllers/Animal.controller';
 
-const app: Application = express();
+export const app: Application = express();
 const port: number | string = process.env.PORT || 8000;
 
 app.use(cors());
